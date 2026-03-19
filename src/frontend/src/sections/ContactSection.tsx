@@ -172,7 +172,7 @@ export function ContactSection() {
                 {
                   icon: MapPin,
                   label: "Address",
-                  value: "123 Beauty Lane, Beverly Hills, CA 90210",
+                  value: "Bangalore, 123 Sri Nagar, 560104",
                 },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-4">
