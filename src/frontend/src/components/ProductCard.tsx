@@ -61,7 +61,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         </p>
         <div className="flex items-center justify-between">
           <span className="font-heading text-lg font-bold text-foreground">
-            ${product.price}
+            ₹{product.price.toLocaleString("en-IN")}
           </span>
           <button
             type="button"

@@ -23,7 +23,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     try {
       const shoppingItems: ShoppingItem[] = items.map((i) => ({
         productName: i.product.name,
-        currency: "usd",
+        currency: "inr",
         quantity: BigInt(i.quantity),
         priceInCents: BigInt(Math.round(i.product.price * 100)),
         productDescription: i.product.description,
@@ -157,7 +157,10 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                             </button>
                           </div>
                           <p className="font-semibold text-sm">
-                            ${(item.product.price * item.quantity).toFixed(2)}
+                            ₹
+                            {(
+                              item.product.price * item.quantity
+                            ).toLocaleString("en-IN")}
                           </p>
                         </div>
                       </div>
@@ -174,7 +177,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     Subtotal
                   </span>
                   <span className="font-heading text-xl font-semibold">
-                    ${subtotal.toFixed(2)}
+                    ₹{subtotal.toLocaleString("en-IN")}
                   </span>
                 </div>
                 <Button
